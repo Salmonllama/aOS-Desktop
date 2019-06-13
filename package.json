@@ -1,0 +1,26 @@
+{
+  "name": "aos-desktop",
+  "productName": "aOS Desktop",
+  "version": "1.0.0",
+  "description": "AaronOS packaged into a desktop app with ElectronJS",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "clean": "rm -rf ./build/",
+    "build": "npm run clean && npm run build-mac && npm run build-win && npm run build-linux",
+    "build-mac": "electron-packager . --platform=darwin --out=build --icon=./icons/aos-logo.icns --asar --overwrite",
+    "build-win": "electron-packager . --platform=win32 --out=build --icon=./icons/aos-logo.ico --asar --overwrite && node scripts/windows.js",
+    "build-linux": "electron-packager . --platform=linux --out=build --icon=./icons/aos-logo.png --asar --overwrite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^5.0.3",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {
+    "electron-packager": "^13.1.1",
+    "electron-winstaller": "^3.0.4"
+  }
+}
