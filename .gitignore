@@ -1,0 +1,10 @@
+# Typical NodeJS ignored.
+node_modules
+package-lock.json
+
+# The output files for `npm run build`. If you're looking for the releases, go to the releases section.
+build/
+
+# Holds the platform dependent scripts for packaging installers and stuff
+# Ignored because it contains filetree information, and will contain code signing information.
+scripts/
